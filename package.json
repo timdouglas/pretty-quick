@@ -17,7 +17,8 @@
     "execa": "^0.8.0",
     "find-up": "^2.1.0",
     "ignore": "^3.3.7",
-    "mri": "^1.1.0"
+    "mri": "^1.1.0",
+    "postinstall-build": "^5.0.1"
   },
   "scripts": {
     "prepublishOnly": "yarn build",
@@ -26,7 +27,8 @@
     "test": "jest",
     "lint": "eslint . --ignore-path=.gitignore",
     "semantic-release": "semantic-release",
-    "precommit": "./bin/pretty-quick.js --staged"
+    "precommit": "./bin/pretty-quick.js --staged",
+    "postinstall": "postinstall-build dist"
   },
   "peerDependencies": {
     "prettier": ">=1.8.0"
