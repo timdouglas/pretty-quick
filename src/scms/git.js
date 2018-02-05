@@ -22,7 +22,7 @@ export const getSinceRevision = (directory, { staged }) => {
   try {
     const revision = staged
       ? 'HEAD'
-      : runGit(directory, ['merge-base', 'HEAD', 'master']).stdout.trim();
+      : runGit(directory, ['merge-base', 'HEAD', 'test']).stdout.trim();
     return runGit(directory, ['rev-parse', '--short', revision]).stdout.trim();
   } catch (error) {
     if (
